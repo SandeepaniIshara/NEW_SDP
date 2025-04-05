@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '../authContext';
+import { useAuth } from '../../authContext';
 import { 
   Drawer, 
   List, 
@@ -123,26 +123,26 @@ const Sidebar = () => {
           {!collapsed && <ListItemText primary="Employees" />}
         </ListItem>
 
-        {/* New Features */}
+        {/* Mail Management Link */}
         <ListItem 
           button 
           component={Link} 
-          to="/mail"
+          to="/mailManagement"
           sx={{ 
-            justifyContent: collapsed ? 'center' : 'flex-start',
-            px: collapsed ? 0 : 2
+            justifyContent: 'flex-start', px: 2,
           }}
         >
-          <ListItemIcon sx={{ minWidth: collapsed ? 'auto' : 56 }}>
+          <ListItemIcon>
             <EmailIcon />
           </ListItemIcon>
-          {!collapsed && <ListItemText primary="Mail Management" />}
+          <ListItemText primary="Mail Management" />
         </ListItem>
 
+        {/* Bill Payments Link */}
         <ListItem 
           button 
           component={Link} 
-          to="/payments"
+          to="/billPayment" // Updated to match the route in App.js
           sx={{ 
             justifyContent: collapsed ? 'center' : 'flex-start',
             px: collapsed ? 0 : 2
